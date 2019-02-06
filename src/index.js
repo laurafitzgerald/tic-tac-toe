@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Board from './board.js';
-
+import MyTable from "./myTable.js";
 
 class Game extends React.Component {
 
@@ -40,6 +40,9 @@ class Game extends React.Component {
       stepNumber: step,
       xIsNext: (step % 2 ) === 0,
     })
+  }
+  onButtonClick(){
+    console.log("Button was clicked")
   }
 
   render() {
@@ -83,7 +86,13 @@ class Game extends React.Component {
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
+        <div><MyTable
+          someprop="Some Prop"
+          onClick={() => this.onButtonClick()}/>
+          </div>
+           <div className="buttonclickoutput"><p id="buttonclickedoutput"></p></div>
       </div>
+ 
 
     );
   }
